@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quux
+  labels:
+    app: quux
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: quux
+  template:
+    metadata:
+      labels:
+        app: quux
+    spec:
+      containers:
+        - name: quux
+          image: alpine
+          command: [sleep]
+          args: ["3600"]
+
